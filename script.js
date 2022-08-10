@@ -32,32 +32,35 @@ function playRound (playerSelection) {
     
     computerSelection = getComputerChoice();
     if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
-        console.log("You win, " + playerSelection + " beats " + computerSelection);
+        //console.log("You win, " + playerSelection + " beats " + computerSelection);
         return("user");
     }
     else if (playerSelection == "SCISSORS" && computerSelection == "PAPER") {
-        console.log("You win, " + playerSelection + " beats " + computerSelection);
+        //console.log("You win, " + playerSelection + " beats " + computerSelection);
         return("user");
     }
     else if (playerSelection == "PAPER" && computerSelection == "ROCK") {
-        console.log("You win, " + playerSelection + " beats " + computerSelection);
+        //console.log("You win, " + playerSelection + " beats " + computerSelection);
         return("user");
     }
     else if (playerSelection == computerSelection) {
-        console.log("Tie!");
+        //console.log("Tie!");
         return ("Tie");
     }
     else {
-        console.log("You lose, " + computerSelection + " beats " + playerSelection);
+        //console.log("You lose, " + computerSelection + " beats " + playerSelection);
         return("computer");
     }
 }
+
+let retorno = "";
 
 //boton para piedra
 const btn1 = document.querySelector('#btn1');
 
 btn1.addEventListener('click', () => {
-    playRound("ROCK");
+    retorno = playRound("ROCK");
+    parrafo.textContent = retorno;
 })
 
 //boton para papel
@@ -65,13 +68,15 @@ btn1.addEventListener('click', () => {
 const btn2 = document.querySelector('#btn2');
 
 btn2.addEventListener('click', () => {
-    playRound("PAPER");
+    retorno = playRound("PAPER");
+    parrafo.textContent = retorno;
 })
 
 //boton para tijeras
 
 const btn3 = document.addEventListener('click', () => {
-    playRound("SCISSORS");
+    retorno = playRound("SCISSORS");
+    parrafo.textContent = retorno;
 })
 
 //div para los resultados
@@ -79,7 +84,15 @@ const btn3 = document.addEventListener('click', () => {
 const results = document.createElement('div');
 results.setAttribute('id', 'results');
 
+//<p> para results
 
+const parrafo = document.createElement('p');
+results.appendChild(parrafo);
+ 
+results.appendChild(parrafo);
+
+const cuerpo = document.querySelector('body');
+cuerpo.appendChild(results);
 
 
 
