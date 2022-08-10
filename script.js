@@ -6,9 +6,9 @@ function getComputerChoice () {
 }
 
 let playerSelection;
-let computerSelection = "";
+let computerSelection = getComputerChoice();
 
-function getPlayerSelection () {
+/*function getPlayerSelection () {
     let temp = "";
     do {
         temp = prompt("Choose your weapon: ");
@@ -26,11 +26,10 @@ function getPlayerSelection () {
     }while (true);
 
     return temp;
-}
+}*/
 
-function playRound (playerSelection, computerSelection) {
+function playRound (playerSelection) {
     
-    playerSelection = getPlayerSelection();
     computerSelection = getComputerChoice();
     if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
         console.log("You win, " + playerSelection + " beats " + computerSelection);
@@ -54,42 +53,31 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    //who wins?
-    let user = 0;
-    let computer = 0;
+//boton para piedra
+const btn1 = document.querySelector('#btn1');
 
-    for (let i = 0; i < 5; i++) {
-        let result = playRound(playerSelection, computerSelection);
+btn1.addEventListener('click', () => {
+    playRound("ROCK");
+})
 
-        if (result == "user") {
-            user ++;
-        }
-        else if (result == "computer"){
-            computer ++;
-        }
-        else if (result == "Tie") {
-            user = user + 0.5;
-            computer = computer + 0.5;
-        }
-    }
+//boton para papel
 
-    if (user > computer) {
-        console.log("You won te game");
-    }
-    else if (user < computer) {
-        console.log("You lost the game");
-    }
-    else {
-        console.log("The game was tied");
-    }
-}
+const btn2 = document.querySelector('#btn2');
 
-game();
+btn2.addEventListener('click', () => {
+    playRound("PAPER");
+})
 
+//boton para tijeras
 
+const btn3 = document.addEventListener('click', () => {
+    playRound("SCISSORS");
+})
 
+//div para los resultados
 
+const results = document.createElement('div');
+results.setAttribute('id', 'results');
 
 
 
