@@ -5,12 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&display=swap" rel="stylesheet">
+
     <title>Document</title>
 </head>
 <body>
-    <button id="btn1">Rock</button>
-    <button id="btn2">Paper</button>
-    <button id="btn3">Scissors</button>
+
+    <header>
+        <h1>ROCK, PAPER, SCISSORS</h1>
+    </header>
+
+    <div class="instructionsPadre">
+        <div class="instructions">
+            <ul>
+                <li class="liText">Select your choice with the buttons</li>
+                <li class="liText">The best in 5 rounds wins</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="game">
+        <div class="user">
+            <div class="score">
+                <p class="letraScore" id="scoreUser">0</p>
+            </div>
+
+            <div class="recuadro">
+                <img src="images/pregunta.png" height="300px" id="imgUser">
+                <div class="botones">
+                    <button id="btn1" class="boton">Rock</button>
+                    <button id="btn2" class="boton">Paper</button>
+                    <button id="btn3" class="boton">Scissors</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="cpu">
+
+            <div class="score">
+                <p class="letraScore" id="scorePc">0</p>
+            </div>
+
+            <div class="recuadro" style="background-color: #FFFFFC;">
+                <img src="images/pregunta.png" height="300px" id="imgPc">
+                <div class="coso">
+                    <p id="testo">I'm a computer, you'll never beat me</p>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <script src="script.js"></script>
 </body>

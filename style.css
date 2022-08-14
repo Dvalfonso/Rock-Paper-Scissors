@@ -1,3 +1,106 @@
 body {
-    background-color: aqua;
+    background-color: #001011;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-family: 'DynaPuff', cursive;
+    font-size: 60px;
+}
+
+.game {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    align-items: center;
+}
+
+.botones {
+    display: flex;
+    height: 50px;
+    gap: 4px;
+}
+
+.boton {
+    color: #FFFFFC;
+    font-family: 'DynaPuff', cursive;
+    flex: 1;
+}
+
+.cpu {
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+    align-items: center;
+}
+
+#testo {
+    color: #FFFFFC;
+    font-family: 'DynaPuff', cursive;
+    font-size: small;
+    text-align: center;
+    background-color: #001011;
+    flex:auto;
+}
+
+button {
+    color: #FFFFFC;
+    background-color: #001011;
+    border-radius: 10px;
+}
+
+.score {
+    height: 50px;
+    width: 50px;
+    border: thick solid #FFFFFC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    border-radius: 15px;
+}
+
+p {
+    color: white;
+}
+
+.instructionsPadre {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    gap: 500px;
+}
+
+.liText {
+    font-family: 'DynaPuff', cursive;
+    color: #FFFFFC;
+}
+
+.recuadro {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    border: thick solid #FFFFFC;
+    background-color: #FFFFFC;
+    border-radius: 10px;
+}
+
+.letraScore {
+    font-family: 'DynaPuff', cursive;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.coso {
+    background-color: #001011;
+    border-radius: 10px;
 }
