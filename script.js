@@ -28,7 +28,8 @@ let computerSelection = getComputerChoice();
     return temp;
 }*/
 
-let ronda;
+let usuario = 0;
+let computadora = 0;
 
 function playRound (playerSelection) {
     
@@ -66,6 +67,9 @@ const imgUser = document.querySelector('#imgUser');
 //imagen de la maquina
 const imgPc = document.querySelector('#imgPc');
 
+//instrucciones
+const instrucciones = document.querySelector('#instructionsPadre');
+const game = document.querySelector('#game');
 
 btn1.addEventListener('click', () => {
     retorno = playRound("ROCK");
@@ -75,6 +79,12 @@ btn1.addEventListener('click', () => {
         imgPc.setAttribute('src', 'images/scissor.png');
         scoreUser.textContent = parseInt(scoreUser.textContent) + 1;
         parrafo.textContent = "You win, rock beats scissor";
+        if (scoreUser.textContent == 5) {
+            cuerpo.removeChild(instrucciones);
+            cuerpo.removeChild(game);
+            parrafo.textContent = "you won five rounds, do you want to try again?";
+            cuerpo.appendChild(botonFinal);
+        }
     }
     else if (retorno == "Tie!") {
         imgPc.setAttribute('src', 'images/rock.png');
@@ -84,6 +94,12 @@ btn1.addEventListener('click', () => {
         imgPc.setAttribute('src', 'images/paper.png');
         scorePc.textContent = parseInt(scorePc.textContent) + 1;
         parrafo.textContent = "Computer wins, paper beats rock";
+        if (scorePc.textContent == 5) {
+            cuerpo.removeChild(instrucciones);
+            cuerpo.removeChild(game);
+            parrafo.textContent = "your opponent won five rounds, do you want to try again?";
+            cuerpo.appendChild(botonFinal);
+        }
     }
 })
 
@@ -100,6 +116,12 @@ btn2.addEventListener('click', () => {
         imgPc.setAttribute('src', 'images/rock.png');
         scoreUser.textContent = parseInt(scoreUser.textContent) + 1;
         parrafo.textContent = "You win, paper beats rock";
+        if (scoreUser.textContent == 5) {
+            cuerpo.removeChild(instrucciones);
+            cuerpo.removeChild(game);
+            parrafo.textContent = "you won five rounds, do you want to try again?";
+            cuerpo.appendChild(botonFinal);
+        }
     }
     else if (retorno == "Tie!") {
         imgPc.setAttribute('src', 'images/paper.png');
@@ -109,6 +131,12 @@ btn2.addEventListener('click', () => {
         imgPc.setAttribute('src', 'images/scissor.png');
         scorePc.textContent = parseInt(scorePc.textContent) + 1;
         parrafo.textContent = "Computer wins, scissors beats paper";
+        if (scorePc.textContent == 5) {
+            cuerpo.removeChild(instrucciones);
+            cuerpo.removeChild(game);
+            parrafo.textContent = "your opponent won five rounds, do you want to try again?";
+            cuerpo.appendChild(botonFinal);
+        }
     }
 })
 
@@ -124,6 +152,12 @@ btn3.addEventListener('click', () => {
         imgPc.setAttribute('src', 'images/paper.png');
         scoreUser.textContent = parseInt(scoreUser.textContent) + 1;
         parrafo.textContent = "You win, scissors beats paper";
+        if (scoreUser.textContent == 5) {
+            cuerpo.removeChild(instrucciones);
+            cuerpo.removeChild(game);
+            parrafo.textContent = "you won five rounds, do you want to try again?";
+            cuerpo.appendChild(botonFinal);
+        }
     }
     else if (retorno == "Tie!") {
         imgPc.setAttribute('src', 'images/scissor.png');
@@ -133,8 +167,15 @@ btn3.addEventListener('click', () => {
         imgPc.setAttribute('src', 'images/rock.png');
         scorePc.textContent = parseInt(scorePc.textContent) + 1;
         parrafo.textContent = "Computer wins, rock beats scissors";
+        if (scorePc.textContent == 5) {
+            cuerpo.removeChild(instrucciones);
+            cuerpo.removeChild(game);
+            parrafo.textContent = "your opponent won five rounds, do you want to try again?";
+            cuerpo.appendChild(botonFinal);
+        }
     }
 })
+
 
 //div para los resultados
 
@@ -152,8 +193,21 @@ cuerpo.appendChild(results);
 
 let scoreUser = document.querySelector('#scoreUser');
 let scorePc = document.querySelector('#scorePc');
-//scoreUser.textContent = parseInt(scoreUser.textContent) + 1;
 
 results.style.display = 'flex';
 results.style.justifyContent = 'center';
 results.style.marginTop = '20px';
+
+
+//boton final
+const botonFinal = document.createElement('button');
+botonFinal.textContent = 'yes';
+botonFinal.style.width = '100px'
+botonFinal.style.marginLeft = '615px';
+botonFinal.style.fontFamily = 'DynaPuff, cursive';
+
+botonFinal.addEventListener('click', () => {
+    location.reload();
+})
+
+
